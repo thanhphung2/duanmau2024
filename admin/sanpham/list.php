@@ -19,7 +19,6 @@
     </form>
     <div class="row formcontent">
         <div class="row mb10 formdsloai">
-
             <table>
                 <tr>
                     <th></th>

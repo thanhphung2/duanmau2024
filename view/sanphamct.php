@@ -1,5 +1,5 @@
 <div class="row mb">
-    <div class="boxtrai">
+    <div class="boxtrai mr">
         <div class="row mb">
             <?php
             extract($onesp);
@@ -16,12 +16,15 @@
                 ?>
             </div>
         </div>
-        <div class="row mb">
-            <div class="boxtitle">
-                BÌNH LUẬN
-            </div>
-            <div class="row boxcontent">
-            </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $("#binhluan").load("view/binhluan/binhluanform.php", {
+                    idpro: <?= $id ?>
+                });
+            });
+        </script>
+        <div class="row" id="binhluan">
         </div>
         <div class="row mb">
             <div class="boxtitle">

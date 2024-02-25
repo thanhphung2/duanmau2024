@@ -39,7 +39,7 @@ function loadonesp($id)
     $sp = pdo_query_one($sql);
     return $sp;
 }
-function update_sanpham($iddm, $id, $tensanpham, $giasp, $motasp, $hinh)
+function update_sanpham($id, $iddm, $tensanpham, $giasp, $motasp, $hinh)
 {
     if ($hinh != "")
         $sql = "UPDATE sanpham set iddm='" . $iddm . "', name='" . $tensanpham . "', price='" . $giasp . "',mota='" . $motasp . "',img='" . $hinh . "' where id=" . $id;

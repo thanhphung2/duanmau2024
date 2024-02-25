@@ -3,6 +3,8 @@ include "../model/pdo.php";
 
 include "../model/danhmuc.php";
 include "../model/sanpham.php";
+include "../model/taikhoan.php";
+include "../model/binhluan.php";
 include "header.php";
 //controller
 
@@ -89,11 +91,11 @@ if (isset($_GET['act'])) {
             $listsanpham = loadallsp("", 0);
             include "sanpham/list.php";
             break;
-
         case 'suasp':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $sp = loadonesp($_GET['id']);
             }
+            $listdanhmuc = loadall();
             include "sanpham/update.php";
             break;
         case 'updatesp':
@@ -111,12 +113,28 @@ if (isset($_GET['act'])) {
                 } else {
                     // echo "Sorry, there was an error uploading your file.";
                 }
-                update_sanpham($iddm, $id, $tensanpham, $giasp, $motasp, $hinh);
+                update_sanpham($id, $iddm, $tensanpham, $giasp, $motasp, $hinh);
+                $listdanhmuc = loadall();
                 $thongbao = "Cập nhật thành công";
             }
-            $listdanhmuc = loadall();
+
             $listsanpham = loadallsp("", 0);
             include "sanpham/list.php";
+            break;
+        case 'dskh':
+            $listtaikhoan = loadall_taikhoan();
+            include "taikhoan/list.php";
+            break;
+        case 'dsbl':
+            $listbinhluan = loadall_binhluan(0);
+            include "binhluan/list.php";
+            break;
+        case 'xoatk':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_taikhoan($_GET['id']);
+            }
+            $listtaikhoan = loadall_taikhoan();
+            include "taikhoan/list.php";
             break;
         default:
             include "home.php";
