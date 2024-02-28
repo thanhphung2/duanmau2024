@@ -1,10 +1,21 @@
+<script>
+    function validateForm() {
+        var tensanpham = document.forms["myForm"]["tensanpham"].value;
+        var giasp = document.forms["myForm"]["giasp"].value;
+
+        if (tensanpham == "" || giasp == "" || giasp < 0) {
+            alert("Vui lòng kiểm tra lại thông tin.");
+            return false; // Chặn việc submit form
+        }
+    }
+</script>
 <div class="row">
     <div class="row formtitle">
         <h1>Thêm mới sản phẩm</h1>
     </div>
     <div class="row formcontent">
-        <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
-            <div class="row mb10">
+        <form name="myForm" action="index.php?act=addsp" method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
+            <div class=" row mb10">
                 Danh mục<br>
                 <select name="iddm" id="">
                     <?php
