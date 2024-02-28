@@ -20,6 +20,7 @@
                 <li><a href="index.php?act=listsp">Hàng hóa</a></li>
                 <li><a href="index.php?act=dskh">Khách hàng</a></li>
                 <li><a href="index.php?act=dsbl">Bình luận</a></li>
+                <li><a href="index.php?act=listbill">Danh sách đơn hàng</a></li>
                 <li><a href="index.php?act=thongke">Thống kê</a></li>
             </ul>
         </div>

@@ -5,6 +5,7 @@ include "../model/danhmuc.php";
 include "../model/sanpham.php";
 include "../model/taikhoan.php";
 include "../model/binhluan.php";
+include "../model/cart.php";
 include "header.php";
 //controller
 
@@ -128,6 +129,19 @@ if (isset($_GET['act'])) {
         case 'dsbl':
             $listbinhluan = loadall_binhluan(0);
             include "binhluan/list.php";
+            break;
+        case 'listbill':
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            $listbill = loadall_bill($kyw, 0);
+            include "bill/listbill.php";
+            break;
+        case 'thongke':
+            $listthongke = loadall_thongke();
+            include "thongke/list.php";
             break;
         case 'xoatk':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
