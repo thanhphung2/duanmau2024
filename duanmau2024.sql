@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2024 at 07:01 AM
+-- Generation Time: Feb 28, 2024 at 09:39 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -48,8 +48,9 @@ CREATE TABLE `bill` (
 
 INSERT INTO `bill` (`id`, `bill_name`, `bill_address`, `bill_tel`, `bill_email`, `bill_pttt`, `ngaydathang`, `total`, `bill_status`, `receive_name`, `receive_address`, `receive_tel`) VALUES
 (19, 'PhungDucThanh', 'số 1 đường ABC', '0123456789', 'thanhpdph18767@fpt.edu.vn', 1, '11:39:20pm 27/02/2024', 45530000, 0, NULL, NULL, NULL),
-(20, 'Thành', '123 abcxyz', '0132456789', 'thanh@gmail.com', 1, '06:58:51am 28/02/2024', 44780000, 0, NULL, NULL, NULL),
-(21, 'thanh123', '123abc', '0123456789', 'thanh@gmail.com', 1, '07:00:15am 28/02/2024', 46280000, 0, NULL, NULL, NULL);
+(21, 'thanh123', '123abc', '0123456789', 'thanh@gmail.com', 1, '07:00:15am 28/02/2024', 46280000, 0, NULL, NULL, NULL),
+(22, 'PhungDucThanh', 'số 1 đường ABC', '0123456789', 'thanhpdph18767@fpt.edu.vn', 1, '09:21:36pm 28/02/2024', 12990000, 0, NULL, NULL, NULL),
+(23, 'PhungDucThanh', 'số 1 đường ABC', '0123456789', 'thanhpdph18767@fpt.edu.vn', 1, '09:26:08pm 28/02/2024', 15240000, 0, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,12 @@ INSERT INTO `cart` (`id`, `iduser`, `idpro`, `img`, `name`, `price`, `soluong`, 
 (31, 6, 12, 'iphone.webp', 'iPhone 15 Pro Max 256GB', 31790000, 1, 31790000, 21),
 (32, 6, 11, 'acer.webp', 'Laptop Acer Gaming Aspire 7', 12990000, 1, 12990000, 21),
 (33, 6, 13, 'donghocasio.webp', 'Casio A159WA-N1', 750000, 1, 750000, 21),
-(34, 6, 13, 'donghocasio.webp', 'Casio A159WA-N1', 750000, 1, 750000, 21);
+(34, 6, 13, 'donghocasio.webp', 'Casio A159WA-N1', 750000, 1, 750000, 21),
+(35, 1, 11, 'acer.webp', 'Laptop Acer Gaming Aspire 7', 12990000, 1, 12990000, 22),
+(36, 1, 11, 'acer.webp', 'Laptop Acer Gaming Aspire 7', 12990000, 1, 12990000, 23),
+(37, 1, 13, 'donghocasio.webp', 'Casio A159WA-N1', 750000, 1, 750000, 23),
+(38, 1, 13, 'donghocasio.webp', 'Casio A159WA-N1', 750000, 1, 750000, 23),
+(39, 1, 13, 'donghocasio.webp', 'Casio A159WA-N1', 750000, 1, 750000, 23);
 
 -- --------------------------------------------------------
 
@@ -175,11 +181,7 @@ CREATE TABLE `taikhoan` (
 
 INSERT INTO `taikhoan` (`id`, `user`, `pass`, `email`, `address`, `tel`, `role`) VALUES
 (1, 'PhungDucThanh', '123456', 'thanhpdph18767@fpt.edu.vn', 'số 1 đường ABC', '0123456789', 0),
-(3, 'PhungDucThanh', '123456', '', NULL, NULL, 0),
-(4, 'PhungDucThanh', '123456', '', NULL, NULL, 0),
-(5, 'PhungDucThanh', '123456', '', NULL, NULL, 0),
-(6, 'thanh123', '123456', 'thanh@gmail.com', NULL, NULL, 0),
-(7, 'thanh123', '123456', '', NULL, NULL, 0);
+(6, 'thanh123', '123456', 'thanh@gmail.com', NULL, NULL, 0);
 
 --
 -- Indexes for dumped tables
@@ -233,7 +235,7 @@ ALTER TABLE `taikhoan`
 -- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `binhluan`
@@ -245,7 +247,7 @@ ALTER TABLE `binhluan`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `danhmuc`
@@ -263,7 +265,7 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
