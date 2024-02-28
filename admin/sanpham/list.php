@@ -30,6 +30,7 @@
                     <th></th>
                 </tr>
                 <?php
+
                 foreach ($listsanpham as $sanpham) {
                     extract($sanpham);
                     $suasp = "index.php?act=suasp&id=" . $id;
@@ -47,7 +48,7 @@
                                 <td>' . $hinh . '</td>
                                 <td>' . $price . '</td>
                                 <td>' . $luotxem . '</td>
-                                <td><a href="' . $suasp . '"><input type="button" value="Sửa"></a> <a href="' . $xoasp . '"><input type="button" value="Xóa"></a></td>
+                                <td><a href="' . $suasp . '"><input type="button" value="Sửa"></a> <a href="' . $xoasp . '" onclick="return confirm();"><input type="button" value="Xóa"></a></td>
                             </tr>';
                 }
                 ?>

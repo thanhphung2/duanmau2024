@@ -5,6 +5,7 @@ include "model/danhmuc.php";
 include "model/sanpham.php";
 include "view/header.php";
 include "model/taikhoan.php";
+include "model/cart.php";
 include "global.php";
 
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
@@ -115,6 +116,28 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
         case 'viewcart':
             include "view/cart/viewcart.php";
+            break;
+        case 'bill':
+            include "view/cart/bill.php";
+            break;
+        case 'billconfirm':
+            if (isset($_POST['dongydathang']) && ($_POST['dongydathang'])) {
+                $user = $_POST['user'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $tel = $_POST['tel'];
+                $pttt = $_POST['pttt'];
+                $ngaydathang = date('h:i:sa d/m/Y');
+                $tongdonhang = tongdonhang();
+                $idbill = insert_bill($user, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang);
+
+                foreach ($_SESSION['mycart'] as $cart) {
+                    insert_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
+                }
+                $_SESSION['mycart'] = [];
+            }
+            $bill = loadone_bill($idbill);
+            include "view/cart/billconfirm.php";
             break;
         case 'thoat':
             session_unset();

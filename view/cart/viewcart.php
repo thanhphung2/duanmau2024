@@ -1,6 +1,6 @@
 <div class="row mb ">
     <div class="boxtrai mr">
-        <div class="row boxcenter">
+        <div class="row boxcenter mb">
             <div class="boxtitle">GIỎ HÀNG</div>
             <div class="row boxcontent box1">
                 <table style="width: 100%;
@@ -60,7 +60,7 @@
         </div>
 
         <div class="row mb bill">
-            <input type="submit" value="ĐỒNG Ý ĐẶT HÀNG">
+            <a href="index.php?act=bill"><input type="submit" value="ĐẶT HÀNG"></a>
         </div>
     </div>
     <div class="boxphai">

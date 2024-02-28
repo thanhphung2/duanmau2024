@@ -79,6 +79,15 @@
     border-right: 1px #ccc solid;
     min-height: 200px;
 }
+.boxcontent3{
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 30px;
+    padding: 20px;
+}
 .boxfooter{
     padding: 10px;
     background-color: #eee;

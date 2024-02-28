@@ -25,7 +25,7 @@
                                 <td>' . $iduser . '</td>
                                 <td>' . $idpro . '</td>
                                 <td>' . $ngaybinhluan . '</td>
-                                <td><a href="' . $xoabl . '"><input type="button" value="Xóa"></a></td>
+                                <td><a href="' . $xoabl . '" onclick="return confirm();"><input type="button" value="Xóa"></a></td>
                             </tr>';
                 }
                 ?>

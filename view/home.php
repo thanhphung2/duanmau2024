@@ -43,7 +43,7 @@
                 };
                 echo '<div class="boxsp ' . $mr . '">
                         <div class="row img"><a href="' . $linksp . '"><img src="' . $hinh . '" alt=""></a></div>
-                        <p class="price">$' . $price . '</p>
+                        <p class="price">' . $price . ' VNĐ</p>
                         <a class="linksp" href="' . $linksp . '">' . $name . '</a>
                         <div class="row btnaddtocart">
                         <form action="index.php?act=addtocart" method="post">
