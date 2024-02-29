@@ -5,7 +5,7 @@
 
         if (tensanpham == "" || giasp == "" || giasp < 0) {
             alert("Vui lòng kiểm tra lại thông tin.");
-            return false; // Chặn việc submit form
+            return false;
         }
     }
 </script>

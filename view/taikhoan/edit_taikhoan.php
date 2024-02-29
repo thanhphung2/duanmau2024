@@ -1,3 +1,18 @@
+<script>
+    function validateForm() {
+        var email = document.forms["myForm"]["email"].value;
+        var tendangnhap = document.forms["myForm"]["user"].value;
+        var matkhau = document.forms["myForm"]["pass"].value;
+
+        // Regular expression for email validation
+        var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        if (tendangnhap == "" || email == "" || matkhau == "" || !email.match(emailRegex)) {
+            alert("Vui lòng kiểm tra lại thông tin.");
+            return false;
+        }
+    }
+</script>
 <div class="row mb">
     <div class="boxtrai mr">
         <div class="boxtitle">
@@ -9,7 +24,7 @@
                 extract($_SESSION['user']);
             }
             ?>
-            <form action="index.php?act=edit_taikhoan" method="post">
+            <form name="myForm" action="index.php?act=dangky" method="post" onsubmit="return validateForm()">
                 <div class="row mb10">
                     Email
                     <input type="email" name="email" value="<?= $email ?>">

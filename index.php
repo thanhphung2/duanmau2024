@@ -62,7 +62,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 } else {
                     $thongbao = "Tài khoản không tồn tại vui lòng kiểm tra lại hoặc đăng ký";
                 }
-                insert_taikhoan($email, $user, $pass);
             }
             include "view/taikhoan/dangky.php";
             break;

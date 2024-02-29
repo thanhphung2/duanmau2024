@@ -1,10 +1,20 @@
+<script>
+    function validateForm() {
+        var tenloai = document.forms["myForm"]["tenloai"].value;
+
+        if (tenloai == "") {
+            alert("Vui lòng kiểm tra lại thông tin.");
+            return false;
+        }
+    }
+</script>
 <div class="row">
     <div class="row formtitle">
         <h1>Thêm mới loại hàng hóa</h1>
     </div>
     <div class="row formcontent">
-        <form action="index.php?act=adddm" method="post">
-            <div class="row mb10">
+        <form name="myForm" action="index.php?act=adddm" method="post" onsubmit="return validateForm()">
+            <div class=" row mb10">
                 Mã loại<br>
                 <input type="text" name="maloai" disabled>
             </div>
